@@ -72,10 +72,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				"/leave/all","leave/change-status/{id}",
 				"/job/new", "/job/delete/{id}","/job/update/{id}",
 				"/candidate/","/candidate/delete/{id}","/candidate/update/{id}"
-				).hasAuthority("ADMIN")
+				).hasAnyAuthority("ADMIN","SUPER_ADMIN")
 			.antMatchers("/employee/{id}","/employee/","employee/update/{id}",
 			"/client/",
-			"/leave/apply","/leave/","/leave/delete/{id}","/leave/update/{id}").hasAnyAuthority("ADMIN","EMPLOYEE")
+			"/leave/apply","/leave/","/leave/delete/{id}","/leave/update/{id}").hasAnyAuthority("ADMIN","EMPLOYEE","SUPER_ADMIN")
 			.anyRequest().authenticated()
 			.and().sessionManagement()
 			.sessionCreationPolicy(SessionCreationPolicy.STATELESS);

@@ -50,7 +50,7 @@ function MainContent () {
         <Switch>
           
           <Route exact path='/'>
-            { base64.decode(window.localStorage.getItem('_usrl_')) === "ADMIN" ? <Redirect to='/admin-dashboard' /> : <Redirect to='/employee-dashboard' /> }
+            { (base64.decode(window.localStorage.getItem('_usrl_')) === "ADMIN") || (base64.decode(window.localStorage.getItem('_usrl_')) === "SUPER_ADMIN") ? <Redirect to='/admin-dashboard' /> : <Redirect to='/employee-dashboard' /> }
             {/* <Redirect to='/admin-dashboard' /> */}
           </Route>
 

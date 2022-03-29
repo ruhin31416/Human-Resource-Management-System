@@ -31,7 +31,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       {new Date().getFullYear()}
-      All Right Reserved | Designed by {"Mohammad Farhan Sadik"}
+      All Right Reserved | Designed by {"Shaery and Ayesha"}
       {"."}
     </Typography>
   );
